@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Writer Post</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <!--[if lt IE 9]>
+            <script src="/js/vendor/html5shiv.min.js"></script>
+        <![endif]-->
+
+        <script src="js/vendor/modernizr.custom.32229-2.8-respondjs-1-4-2.js"></script>
+    </head>
+    <body>
+        <!-- if the user has javascript disabled they can still use the menu -->
+        <noscript>
+            <div class="no-js-menu">
+                <ul>
+                    <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
+                    <li><i class="fa fa-user"></i><a href="author.html">Henry Guzmán</a></li>
+            <!--   <li><i class="fa fa-anchor"></i><a href="page.html">About</a></li>
+                    <li><i class="fa fa-star"></i><a href="favorites.html">Favorites</a></li> -->
+                    <li><i class="fa fa-paper-plane"></i><a href="contact.html">Contact</a></li>
+            <!--    <li><i class="fa fa-file"></i><a href="post.html">Post Page</a></li>
+                    <li><i class="fa fa-file"></i><a href="post-sidebar.html">Post with Sidebar</a></li>
+                    <li><i class="fa fa-home"></i><a href="alt-home.html">Alternate Home</a></li>
+                    <li><i class="fa fa-image"></i><a href="category.html">Category Page</a></li>  -->
+                </ul>
+            </div>
+        </noscript>
+        <!-- end no script -->
+
+        <header class="hero-image" role="banner" style="background-image: url(img/git2.jpg);">
+
+            <span class="menu-trigger animated fadeInDown">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </span>
+
+            <div id="menu-target">
+                <ul>
+                    <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
+                    <li><i class="fa fa-user"></i><a href="author.html">Henry Guzmán</a></li>
+            <!--    <li><i class="fa fa-anchor"></i><a href="page.html">About</a></li>
+                    <li><i class="fa fa-star"></i><a href="favorites.html">Favorites</a></li> -->
+                    <li><i class="fa fa-paper-plane"></i><a href="contact.html">Contact</a></li>
+            <!--    </ul>
+                <hr>
+                <ul>
+                    <li><i class="fa fa-file"></i><a href="post.html">Post Page</a></li>
+                    <li><i class="fa fa-file"></i><a href="post-sidebar.html">Post with Sidebar</a></li>
+
+                    <li><i class="fa fa-home"></i><a href="alt-home.html">Alternate Home</a></li>
+                    <li><i class="fa fa-image"></i><a href="category.html">Category Page</a></li>
+                </ul>   -->
+            </div>
+
+        </header>
+
+        <main class="container">
+            <div class="row">
+                <div class="col-xs-12 single-content">
+                    <p class="meta">
+                        <a class="" href="author.html">Henry Guzmán</a> <!-- < in <a class="" href="category.html">Storytime</a> <i class="link-spacer"></i> <i class="fa fa-bookmark"></i> 23 minute read -->
+
+                    </p>
+
+
+                    <h1>Colaborar en un proyecto en GitHub</h1>
+
+                    <ol>
+                      <li><strong>Fork del repositorio:</strong> Realiza un copia exacta del repositorio en el perfil del usuario colaborador</li>
+                      <li><strong>Clonar el repositorio:</strong> <code class="highlighter-rouge">git clone https://github.com/User/NombreRepo.git</code></li>
+                      <li><strong>Entrar en la carpeta clonada:</strong> Para entrar a la carpeta clonada desde una consola ubuntu use el comando <code class="highlighter-rouge">cd NombreRepo</code></li>
+                      <li><strong>Verificar las conexiones con fuentes remotas:</strong> <code class="highlighter-rouge">git remote -v</code> por defecto se mostrara la conexión realizada cuando se clono el repositorio, por defecto es llamada <code class="highlighter-rouge">origin</code></li>
+                      <li><strong>Crear una conexión remota con el repositorio original</strong> <code class="highlighter-rouge">git remote add upstream https://github.com/User/RepoOriginal(Forkeado)</code></li>
+                      <li><strong>Renombrar conexiones remotas:</strong> Con el fin de tener un poco mas de claridad sobre cual es la conexión remota que estamas usando, se puede renombrar a gusto con el comando <code class="highlighter-rouge">git remote rename origin fork</code></li>
+                    </ol>
+
+                    <h3 id="trabajo-diario-con-requerimientos">Trabajo diario con requerimientos</h3>
+
+                    <ol>
+                      <li><strong>Actualizar rama master con ultimos cambios:</strong> Para tener actualizado nuestro repositorio local con las ultimas actualizaciones del repositorio remoto original rama master <code class="highlighter-rouge">git pull -r upstream master</code></li>
+                      <li><strong>Crear requerimiento ó funcionalidad:</strong> Cree un nuevo requerimiento en su herramienta de trabajo preferida Ej: trello ó GitHub</li>
+                      <li><strong>Crear una rama donde se desarrollara la funcionalidad:</strong> <code class="highlighter-rouge">git checkout -b feature-nombre-rama</code>
+                        <blockquote>
+                          <p><strong>Nota:</strong> Podemos usar el comando <code class="highlighter-rouge">git branch</code>para saber en cual rama estamos trabajando</p>
+                        </blockquote>
+                      </li>
+                      <li><strong>Hacer los cambios en el codigo:</strong> Estos cambios se realizan utilizando su IDE favorito
+                        <blockquote>
+                          <p><strong>Nota:</strong> Los cambios no necesariamente deben ser pequeños, se puede trabajar por horas hasta conseguir una caracterisitica de la funcionalidad podemos usar <code class="highlighter-rouge">git status</code></p>
+                        </blockquote>
+                      </li>
+                      <li><strong>Adicionar archivos que se incluiran en el proximo commit:</strong> Para incluir un solo archivo utilizamos <code class="highlighter-rouge">git add archivo</code> y para incluir todos los archivos modificados <code class="highlighter-rouge">git add .</code>
+                        <blockquote>
+                          <p><strong>Nota:</strong> Para confirmar el estado de los archivos podemos usar <code class="highlighter-rouge">git status</code></p>
+                        </blockquote>
+                      </li>
+                      <li><strong>Commit a los cambios:</strong> Una vez se logre un avance significativo de la funcionalidad o una caracteristica importante se debe realizar un <code class="highlighter-rouge">git commit -m "Descripción del avance"</code>
+                        <blockquote>
+                          <p><strong>Nota:</strong> Los commit se realizan para garantizar que no se pierdan las caracterisiticas desarrolladas y de esta manera avanzar a la siguiente</p>
+                        </blockquote>
+                      </li>
+                      <li><strong>Subir la rama con los cambios:</strong> Una vez hemos desarrollado completamente la funcionalidad, procedemos a subirla con el comando <code class="highlighter-rouge">git push origin feature-nombre-rama</code>
+                        <blockquote>
+                          <p><strong>Nota:</strong> Recordemos que se debe subir la rama al repositorio propiedad del colaborador (NO AL ORIGINAL)</p>
+                        </blockquote>
+                      </li>
+                      <li><strong>Solicitar que se incorporen cambios:</strong> Entramos a nuestro usuario y reealizamos una solicitud de incorporación del codigo al proyecto original utilizando la opción Pull Request</li>
+                      <li><strong>Eliminar rama en local:</strong> Para eliminar una rama despues que fue incorporada por el propietario del repositorio, usaremos el comando <code class="highlighter-rouge">git branch -d feature-nombre-rama</code>
+                        <blockquote>
+                          <p><strong>Nota:</strong> si deseamos eliminarla sin usar el comando merge utilizaremos <code class="highlighter-rouge">git branch -D feature-nombre-rama</code></p>
+                        </blockquote>
+                      </li>
+                      <li><strong>Eliminar rama en repositorio remoto:</strong> Para eliminar una rama que esta en un repositorio remoto usaremos <code class="highlighter-rouge">git push origin --delete feature-nombre-rama</code></li>
+                    </ol>
+
+                    <h3 id="unir-ramas">Unir Ramas</h3>
+
+                    <p>Para unir ramas dentro de nuestro repositorio local usaremos el comando <code class="highlighter-rouge">git merge feature-nombre-rama</code>, debemos estar ubicado en la rama que deseamos actualizar</p>
+
+
+
+
+
+
+                  <div class="date">
+                    <p class="lead"> Written on May 4, 2017 </p>
+                  </div>
+
+                </div>
+  <!--
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra ligula eget feugiat sollicitudin. Praesent accumsan, ante ut porttitor aliquet, odio felis mollis ante, et pretium arcu ipsum eget turpis. Quisque congue odio tristique, tincidunt arcu a, dignissim neque. Cras ligula erat, porta sed tristique at, sollicitudin sit amet ligula. Quisque eleifend elementum mauris, eu condimentum tortor ultrices a. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer hendrerit, arcu a aliquam malesuada, sapien quam tempor neque, nec aliquam odio mi vel diam. Pellentesque egestas pharetra justo, id malesuada erat tincidunt ac. Ut mauris mauris, ultricies ut pharetra sit amet, suscipit sed nibh. Suspendisse vestibulum sem sed rhoncus pharetra. Nunc commodo, neque eget gravida mattis, augue est sollicitudin nunc, elementum aliquet tortor mi ac velit. Ut nec pharetra est. Vestibulum at mauris sapien. Duis sed turpis at lectus egestas rhoncus.</p>
+
+                    <p class="pullquote">Ut ullamcorper turpis nec felis vestibulum, vitae pretium mi sodales.</p>
+
+
+                    <p>Suspendisse laoreet consequat pellentesque. Aliquam erat volutpat. Nulla est elit, bibendum sit amet mauris eu, varius sollicitudin nibh. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus veniam laborum sapiente, doloribus placeat culpa aliquam asperiores laudantium nobis ipsum ut, suscipit delectus! Aut delectus, voluptate, sunt fugiat ea harum!</p>
+
+                    <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel voluptatem optio, excepturi, sapiente corporis nihil quis natus quibusdam odio ex laborum cupiditate minima eos.</blockquote>
+
+                    <p>auctor a erat ac, dignissim bibendum urna. Ut aliquet convallis scelerisque. Praesent id luctus leo. Nam vestibulum interdum ligula blandit molestie. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis tempore illum inventore sit commodi, id eos nemo est voluptate aperiam tenetur? In, sint sed reprehenderit ipsum voluptas, nam molestias velit.</p>
+
+                    <hr>
+
+                    <p>Etiam sed condimentum elit. Curabitur eu malesuada turpis. Nam sit amet dui tellus. Nullam eget neque sed lectus tincidunt fermentum. Aenean ac interdum odio, vitae consectetur erat. Nunc venenatis turpis sed consectetur lacinia. Phasellus euismod odio feugiat, semper ligula in, egestas magna. Duis ullamcorper gravida lacus a blandit. Fusce et diam pellentesque, egestas diam pellentesque, gravida libero. Ut condimentum, nulla ac faucibus porttitor, est dui gravida est, vel varius mi justo at erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla facilisis diam eu libero suscipit lacinia. Sed sollicitudin justo ut fermentum venenatis. Morbi justo magna, pellentesque rutrum scelerisque eget, vehicula ac eros. Nam quis velit ac lorem blandit egestas eget id ante. Integer nibh arcu, vulputate eget luctus vel, porta eu ligula.</p>
+
+                        <ul>
+                            <li>Maecenas pulvinar, turpis quis luctus tincidunt.</li>
+                            <li>Maecenas pulvinar, turpis quis luctus tincidunt.</li>
+                            <li>Maecenas pulvinar, turpis quis luctus tincidunt.</li>
+                            <li>Maecenas pulvinar, turpis quis luctus tincidunt.</li>
+                        </ul>
+
+                    <p>Lorem massa hendrerit mi, ut dapibus sem enim at nisl. Nullam ut mollis arcu. Quisque lobortis nibh diam, non molestie dui pretium et. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam quos, mollitia dolor nam soluta consequuntur excepturi eveniet quod autem quasi. Labore dolorum vel voluptates molestias qui perspiciatis eveniet non, culpa!</p>
+                  -->
+            <div class="wrapper-footer">
+              <div class="container">
+                  <footer class="footer">
+
+                      <a href="mailto:hguzman10@gmail.com" class="btn btn-social-icon btn-email ">
+                       <span class = "fa fa-envelope"> </span>
+                      </a>
+                      <a href="https://www.twitter.com/hguzman10" class="btn btn-social-icon  btn-twitter ">
+                       <span class = "fa fa-twitter"> </span>
+                      </a>
+                      <a href="https://www.facebook.com/hguzman10" class="btn btn-social-icon btn-facebook ">
+                       <span class = "fa fa-facebook"> </span>
+                      </a>
+                      <a href="https://instagram.com/hguzman10s" class="btn btn-social-icon btn-instagram ">
+                       <span class = "fa fa-instagram"> </span>
+                      </a>
+                      <a href="https://github.com/hguzman" class="btn btn-social-icon btn-github ">
+                       <span class = "fa fa-github"> </span>
+                      </a>
+                      <a href="http://stackoverflow.com/users/3330650/hguzman" class="btn btn-social-icon btn-stackoverflow ">
+                       <span class = "fa fa-stack-overflow"> </span>
+                      </a>
+                    </footer>
+                  </div>
+                </div>
+
+                </div><!-- main-content/col -->
+            </div> <!--/row -->
+
+        </main> <!-- /container -->
+
+
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+        <script src="js/vendor/jquery.jpanelmenu.min.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/vendor/fastclick.min.js"></script>
+
+
+        <script src="js/main.js"></script>
+    </body>
+</html>
